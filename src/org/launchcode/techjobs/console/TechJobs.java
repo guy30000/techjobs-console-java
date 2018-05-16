@@ -62,11 +62,12 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    //printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-                    System.out.println("XXXXXXXXXXXXXXXWORKING ON THISXXXXXXXXXXXXXd.");
+                    printJobs(JobData.Search_Value(searchTerm));
+                    //Line above sends to JobData
+                    //System.out.println("XXXXXXXXXXXXXXXWORKING ON THISXXXXXXXXXXXXXd.");
 
-
-                } else {
+                } else { //nothing found
+                    System.out.println("No results found. Try again. ");
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
 
 
