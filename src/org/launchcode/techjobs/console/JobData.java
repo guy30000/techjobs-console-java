@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by LaunchCode
+ * Created by LaunchCode, jacked with by spillz
  */
 public class JobData {
 
