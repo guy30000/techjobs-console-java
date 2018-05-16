@@ -85,8 +85,8 @@ public class JobData {
         return jobs;
     }
 
-    //adding this v
-    public static ArrayList<HashMap<String, String>> Search_Value(String value) {
+    //adding this v  mod
+    public static ArrayList<HashMap<String, String>> findByValue(String value) {
 
         // load data, if not already loaded
         loadData();
@@ -94,10 +94,7 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-
-
             for (String key : row.keySet()) {
-
                 String aValue = row.get(key);
 
                 if (aValue.toLowerCase().contains(value.toLowerCase()) && !jobs.contains(row) ) {

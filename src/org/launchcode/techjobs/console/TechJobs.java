@@ -62,12 +62,12 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    printJobs(JobData.Search_Value(searchTerm));
+                    printJobs(JobData.findByValue(searchTerm));
                     //Line above sends to JobData
                     //System.out.println("XXXXXXXXXXXXXXXWORKING ON THISXXXXXXXXXXXXXd.");
 
                 } else { //nothing found
-                    System.out.println("No results found. Try again. ");
+                    //System.out.println("- No results found. Try again. -"); //This line became redundant. Correceted bellow
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
 
 
@@ -117,6 +117,10 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> all_Jobs) {
+        if (all_Jobs.size() == 0) {
+            System.out.println("No results found. Try again. ");
+        }
+
 
         for (HashMap<String, String> each_job : all_Jobs) {
             System.out.println("***********");
@@ -124,6 +128,7 @@ public class TechJobs {
                 System.out.println(job_list.getKey() + ": " + job_list.getValue());
             }
             System.out.println("***********\n");
+
         }
     }
 }
